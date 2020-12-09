@@ -3,8 +3,12 @@ description: 'This action will handle the deployment process of your project to 
 author: 'liangdongin'
 
 runs:
-  using: 'node12'
-  main: 'main.js'
+  jobs:
+  build-and-deploy:
+    steps:
+    - name: build
+      uses: .github/workflows/build
+
 branding:
   icon: 'git-commit'
   color: 'orange'
