@@ -15,7 +15,9 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
     - name: Install and Build 
       run: |
-          npm install hexo
+          # install hexo env
+          npm install hexo-cli -g
+          npm install hexo-deployer-git --save
           npm i --save hexo-wordcount
           npm install
           hexo g
