@@ -16,7 +16,7 @@ jobs:
     - name: Install and Build 
       run: |
           # install hexo env
-          npm install hexo-cli -g
+          sudo npm install hexo-cli -g
           npm install hexo-deployer-git --save
           npm i --save hexo-wordcount
           npm install
