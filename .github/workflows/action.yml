@@ -5,7 +5,7 @@ on:
       - blog-source
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu：18.0.4
     steps:
     - name: Checkout
       uses: actions/checkout@v2
