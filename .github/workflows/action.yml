@@ -5,7 +5,7 @@ on:
       - blog-source
 jobs:
   build-and-deploy:
-    runs-on: ubuntu:18.0.4
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -16,10 +16,11 @@ jobs:
     - name: Install and Build 
       run: |
           # install hexo env
+          npm -v
           npm install
           sudo npm install hexo-cli -g
           npm install hexo-deployer-git --save
-          npm i --save hexo-wordcount
+          npm i --save shexo-wordcount
           hexo g
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
