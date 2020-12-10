@@ -13,11 +13,15 @@ jobs:
         repository: 'liangdongin/blog'
         ref: 'blog-source'
         token: ${{ secrets.GH_TOKEN }}
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
+    - name: Install and Build 
+      run: |
+          npm install hexo-cli -g
+          npm install
+          hexo g
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
         BRANCH: master
         FOLDER: public
-        BUILD_SCRIPT: npm install hexo-cli -g && npm install && hexo g
+        CLEAN: true # Automatically remove deleted files from the deploy branch
