@@ -5,7 +5,7 @@ on:
       - blog-source
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -15,5 +15,5 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
         BRANCH: master
-        FOLDER: ./public
+        FOLDER: public
         BUILD_SCRIPT: npm install hexo-cli -g && npm install && hexo g
