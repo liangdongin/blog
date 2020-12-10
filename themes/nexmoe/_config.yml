@@ -2,7 +2,7 @@ avatar: https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/avatar.jpg # 
 
 # 既是博客的背景，又是文章默认头图
 background:
-  path: https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/background_heome.jpg
+  path: https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/background_home.jpg
   height: 960
   width: 1440
 
