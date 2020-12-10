@@ -17,9 +17,9 @@ jobs:
       run: |
           # install hexo env
           sudo npm install hexo-cli -g
-          npm install hexo-deployer-git --save
-          npm i --save hexo-wordcount
-          npm install
+          sudo npm install hexo-deployer-git --save
+          sudo npm i --save hexo-wordcount
+          sudo npm install
           hexo g
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
