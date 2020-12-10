@@ -5,7 +5,7 @@ on:
       - blog-source
 jobs:
   build-and-deploy:
-    runs-on: Ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@master
