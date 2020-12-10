@@ -104,3 +104,8 @@ theme: nexmoe
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+background:
+  path: https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/background.jpg
+  height: 960
+  width: 1440
