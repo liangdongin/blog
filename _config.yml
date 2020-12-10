@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Blog
-subtitle: 'Blog'
-description: 'Blog'
-keywords: 'Blog'
-author: 梁冬林
+title: 冬天
+subtitle: '冬天Blog'
+description: '冬天Blog'
+keywords: '冬天Blog'
+author: 冬天
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -45,7 +45,7 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''

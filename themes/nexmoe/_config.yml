@@ -33,9 +33,9 @@ menu:
   回到首页: 
     - /
     - icon-home
-#  文章归档: 
-#    - /archives
-#    - icon-container
+  文章归档: 
+    - /archives.html
+    - icon-container
   关于博客:
     - /about.html
     - icon-info-circle
