@@ -16,11 +16,11 @@ jobs:
     - name: Install and Build 
       run: |
           # install hexo env
-          npm -v
+          node -v
           npm install
           sudo npm install hexo-cli -g
           npm install hexo-deployer-git --save
-          npm i --save shexo-wordcount
+          npm i --save hexo-wordcount
           hexo g
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
