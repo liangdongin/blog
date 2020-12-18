@@ -10,6 +10,7 @@ coverWidth: 517
 coverHeight: 427
 ---
 
+<!--more-->
 ## 原因
 
 系统缺少（D3dcompiler_47.dll）文件
