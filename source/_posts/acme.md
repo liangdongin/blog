@@ -170,7 +170,7 @@ server {
         ssl_session_cache shared:SSL:10m;
         ssl_prefer_server_ciphers on;
         
-        location  /ldl{
+        location  /{
             root html;
             index index.html index.htm;
   }
