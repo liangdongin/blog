@@ -10,12 +10,11 @@ coverWidth: 517
 coverHeight: 427
 ---
 
-<!--more-->
-
 ## 原因
 
 系统缺少（D3dcompiler_47.dll）文件
 
+<!--more-->
 ## 解决办法
 
 1.右击我的电脑，并点击‘属性’选项。
