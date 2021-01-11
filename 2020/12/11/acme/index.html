@@ -21,7 +21,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/2020/12/11/acme/dns.jpg">
 <meta property="article:published_time" content="2020-12-11T10:10:26.000Z">
-<meta property="article:modified_time" content="2020-12-18T11:40:10.564Z">
+<meta property="article:modified_time" content="2021-01-11T03:42:55.846Z">
 <meta property="article:author" content="冬天">
 <meta property="article:tag" content="acme">
 <meta property="article:tag" content="https">
@@ -29,7 +29,7 @@
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/2020/12/11/acme/dns.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1608291626727">
+  <link rel="stylesheet" href="/css/style.css?v=1610336588959">
 <meta name="generator" content="Hexo 5.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -139,7 +139,7 @@
   
 </aside>
     <div class="nexmoe-copyright">
-        &copy; 2020 冬天
+        &copy; 2021 冬天
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
     </div>
@@ -162,6 +162,14 @@
 </div>
 
   <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">相关资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85acme"><span class="toc-number">2.</span> <span class="toc-text">安装acme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">可选参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-number">3.</span> <span class="toc-text">申请证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-HTTP-%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">1.HTTP 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DNS-%E6%96%B9%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">1.DNS 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">申请证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A7%A3%E6%9E%90"><span class="toc-number">3.2.2.</span> <span class="toc-text">查看解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E9%AA%8C%E8%AF%81%EF%BC%8C%E5%BE%97%E5%88%B0%E8%AF%81%E4%B9%A6"><span class="toc-number">3.2.3.</span> <span class="toc-text">完成验证，得到证书</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API%E6%B7%BB%E5%8A%A0DNS%E9%AA%8C%E8%AF%81"><span class="toc-number">3.3.</span> <span class="toc-text">API添加DNS验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%81%E4%B9%A6"><span class="toc-number">4.</span> <span class="toc-text">使用证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0acme"><span class="toc-number">5.</span> <span class="toc-text">更新acme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">5.1.</span> <span class="toc-text">手动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">5.2.</span> <span class="toc-text">开启自动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">5.3.</span> <span class="toc-text">关闭自动更新</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
     
   </div>
 
@@ -237,7 +245,7 @@ _acme-challenge.liangdonglin.cn. 299 IN    TXT    &quot;86gDwJGcR26QvGkhl5oCZvFP
 [2020年 12月 18日 星期五 16:44:48 CST] Your cert key is in  /root/.acme.sh/*.liangdonglin.cn/*.liangdonglin.cn.key 
 [2020年 12月 18日 星期五 16:44:48 CST] The intermediate CA cert is in  /root/.acme.sh/*.liangdonglin.cn/ca.cer 
 [2020年 12月 18日 星期五 16:44:48 CST] And the full chain certs is there:  /root/.acme.sh/*.liangdonglin.cn/fullchain.cer </code></pre>
-<h2 id="API添加DNS验证"><a href="#API添加DNS验证" class="headerlink" title="API添加DNS验证"></a>API添加DNS验证</h2><p><a target="_blank" rel="noopener" href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi">文档</a><br>优点 acme 自动调用域名解析商API自动添加DNS解析完成验证，能自动更新。<br>以GoDaddy为列<br>登录GoDaddy账号生成自己App_KEY和App_Secret</p>
+<h3 id="API添加DNS验证"><a href="#API添加DNS验证" class="headerlink" title="API添加DNS验证"></a>API添加DNS验证</h3><p><a target="_blank" rel="noopener" href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi">文档</a><br>优点 acme 自动调用域名解析商API自动添加DNS解析完成验证，能自动更新。<br>以GoDaddy为列<br>登录GoDaddy账号生成自己App_KEY和App_Secret</p>
 <pre><code class="bash">export GD_Key=&quot;sdfsdfsdfljlbjkljlkjsdfoiwje&quot;
 export GD_Secret=&quot;asdfsdafdsfdsfdsfdsfdsafd&quot;
 acme.sh --issue --dns dns_gd -d example.com -d www.example.com</code></pre>
@@ -335,7 +343,7 @@ acme.sh --issue --dns dns_gd -d example.com -d www.example.com</code></pre>
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1608291626728"></script>
+ <script src="/js/app.js?v=1610336588960"></script>
 
   
 
