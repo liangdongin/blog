@@ -127,7 +127,7 @@ acme.sh --renew -d *.liangdonglin.cn  --dns  --yes-I-know-dns-manual-mode-enough
 [2020年 12月 18日 星期五 16:44:48 CST] The intermediate CA cert is in  /root/.acme.sh/*.liangdonglin.cn/ca.cer 
 [2020年 12月 18日 星期五 16:44:48 CST] And the full chain certs is there:  /root/.acme.sh/*.liangdonglin.cn/fullchain.cer 
 ``` 
-## API添加DNS验证
+### API添加DNS验证
 [文档](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)
 优点 acme 自动调用域名解析商API自动添加DNS解析完成验证，能自动更新。
 以GoDaddy为列
