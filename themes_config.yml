@@ -19,7 +19,7 @@ menu:
   - page: archive
     directory: archives/
     icon: fa-archive
-  - page: about
+  - page: about.html
     directory: about
     icon: fa-user
   - page: rss
