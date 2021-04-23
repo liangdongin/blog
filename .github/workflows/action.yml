@@ -27,6 +27,8 @@ jobs:
           npm uninstall hexo-generator-index --save
           npm install hexo-generator-index-pin-top --save
           hexo g
+          cp public
+          ls -ahl
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
