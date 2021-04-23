@@ -1,180 +1,143 @@
 <!DOCTYPE html>
-
-<html lang="zh-CN">
-
+<html>
 <head>
-  
-  <title>使用acme申请免费的HTTPS证书 - 冬天</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="冬天Blog">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta charset="utf-8">
   
   
+  <title>使用acme申请免费的HTTPS证书 | 冬天</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="芸芸众生,沧海一粟。">
+  
+  
+    <meta name="keywords" content="冬天Blog">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="冬天" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="相关资料acme 文档Let’s Encrypt 证书颁发机构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用acme申请免费的HTTPS证书">
-<meta property="og:url" content="http://liangdonglin.cn/2020/12/11/acme/index.html">
-<meta property="og:site_name" content="冬天">
-<meta property="og:description" content="相关资料acme 文档Let’s Encrypt 证书颁发机构">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/2020/12/11/acme/dns.jpg">
-<meta property="article:published_time" content="2020-12-11T10:10:26.000Z">
-<meta property="article:modified_time" content="2021-01-11T03:42:55.846Z">
-<meta property="article:author" content="冬天">
-<meta property="article:tag" content="acme">
-<meta property="article:tag" content="https">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/2020/12/11/acme/dns.jpg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1610336588959">
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
 <meta name="generator" content="Hexo 5.2.0"></head>
 
-<body class="mdui-drawer-body-left">
-  
-  <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/background_home.jpg)"></div>
-    <div class="mdui-appbar mdui-shadow-0">
-      <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
-        <div class="mdui-toolbar-spacer"></div>
-        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="冬天" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/avatar.jpg" alt="冬天"></a>
-       </div>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">冬天</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">芸芸众生,沧海一粟。</a>
+        </h2>
+      
     </div>
-  </div>
-  <div id="nexmoe-header">
-      <div class="nexmoe-drawer mdui-drawer" id="drawer">
-    <div class="nexmoe-avatar mdui-ripple">
-        <a href="/" title="冬天">
-            <img src="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/avatar.jpg" alt="冬天" alt="冬天">
-        </a>
-    </div>
-    <div class="nexmoe-count">
-        <div><span>文章</span>2</div>
-        <div><span>标签</span>4</div>
-        <div><span>分类</span>0</div>
-    </div>
-    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
-            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
-            <div class="mdui-list-item-content">
-                回到首页
-            </div>
-        </a>
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> 首页</a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
-            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
-            <div class="mdui-list-item-content">
-                文章归档
-            </div>
-        </a>
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> 归档</a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
-            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-            <div class="mdui-list-item-content">
-                关于博客
-            </div>
-        </a>
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> 关于</a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/py.html" title="我的朋友">
-            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
-            <div class="mdui-list-item-content">
-                我的朋友
-            </div>
-        </a>
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> 订阅</a>
         
+      </nav>
     </div>
-    <aside id="nexmoe-sidebar">
-  
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://cn.bing.com/search?q=site:www.liangdonglin.cn" onsubmit="return search();">
-            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
-        </form>
-    </div>
-</div>
-  
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-social">
-        <a class="mdui-ripple" href="https://github.com/liangdongin/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
-            <i class="nexmoefont icon-github"></i>
-        </a>
-    </div>
-</div>
-  
-  
-
-  
-  
-  <div class="nexmoe-widget-wrap">
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/Win7/" style="font-size: 10px;">Win7</a> <a href="/tags/acme/" style="font-size: 10px;">acme</a> <a href="/tags/https/" style="font-size: 10px;">https</a>
-    </div>
-    
-  </div>
-
-  
-  
-  <div class="nexmoe-widget-wrap">
-    <h3 class="nexmoe-widget-title">文章归档</h3>
-    <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-<style>
-.nexmoe-widget .archive-list-count{
-	position : absolute;
-	right: 15px;
-	top:9px;
-	color: #DDD;
-}
-</style>
-
-  
-</aside>
-    <div class="nexmoe-copyright">
-        &copy; 2021 冬天
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
-    </div>
-</div><!-- .nexmoe-drawer -->
-  </div>
-  <div id="nexmoe-content">
-    <div class="nexmoe-primary">
-        <div class="nexmoe-post">
-  
-      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-          <img data-src="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/images/background_home.jpg" data-sizes="auto" alt="使用acme申请免费的HTTPS证书" class="lazyload">
-          <h1>使用acme申请免费的HTTPS证书</h1>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
       </div>
-  
-  
-  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月11日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.7k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
-</div>
-
-  <div class="nexmoe-post-right">
-    
-      <div class="nexmoe-fixed">
-        <div class="nexmoe-valign">
-            <div class="nexmoe-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">相关资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85acme"><span class="toc-number">2.</span> <span class="toc-text">安装acme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">可选参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-number">3.</span> <span class="toc-text">申请证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-HTTP-%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">1.HTTP 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DNS-%E6%96%B9%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">1.DNS 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">申请证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A7%A3%E6%9E%90"><span class="toc-number">3.2.2.</span> <span class="toc-text">查看解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E9%AA%8C%E8%AF%81%EF%BC%8C%E5%BE%97%E5%88%B0%E8%AF%81%E4%B9%A6"><span class="toc-number">3.2.3.</span> <span class="toc-text">完成验证，得到证书</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API%E6%B7%BB%E5%8A%A0DNS%E9%AA%8C%E8%AF%81"><span class="toc-number">3.3.</span> <span class="toc-text">API添加DNS验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%81%E4%B9%A6"><span class="toc-number">4.</span> <span class="toc-text">使用证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0acme"><span class="toc-number">5.</span> <span class="toc-text">更新acme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">5.1.</span> <span class="toc-text">手动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">5.2.</span> <span class="toc-text">开启自动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">5.3.</span> <span class="toc-text">关闭自动更新</span></a></li></ol></li></ol>
-            </div>
-        </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
       </div>
-    
+    </div>
   </div>
+</header>
 
-  <article>
-    <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p><a target="_blank" rel="noopener" href="https://github.com/acmesh-official/acme.sh/wiki/">acme 文档</a><br><a target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt 证书颁发机构</a></p>
+      <div class="outer">
+        <section id="main"><article id="post-acme" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      使用acme申请免费的HTTPS证书
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2020-12-11T10:10:26.000Z" itemprop="datePublished">2020年12月11日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2020/12/11/acme/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p><a target="_blank" rel="noopener" href="https://github.com/acmesh-official/acme.sh/wiki/">acme 文档</a><br><a target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt 证书颁发机构</a></p>
 <a id="more"></a>
 <h2 id="安装acme"><a href="#安装acme" class="headerlink" title="安装acme"></a>安装acme</h2><pre><code class="bash">curl https://get.acme.sh | sh</code></pre>
 <p>默认安装目录在~/.acme.sh/</p>
@@ -206,7 +169,7 @@ acme.sh  --issue   -d www.liangdonglin.cn   --apache</code></pre>
 [2020年 12月 18日 星期五 16:19:30 CST] Please add the TXT records to the domains, and re-run with --renew.
 [2020年 12月 18日 星期五 16:19:30 CST] Please add &#39;--debug&#39; or &#39;--log&#39; to check more details.
 [2020年 12月 18日 星期五 16:19:30 CST] See: https://github.com/acmesh-official/acme.sh/wiki/How-to-debug-acme.sh</code></pre>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/2020/12/11/acme/dns.jpg" alt="dns_image" class="lazyload"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liangdongin/blog@latest/2020/12/11/acme/dns.jpg" alt="dns_image"></p>
 <h4 id="查看解析"><a href="#查看解析" class="headerlink" title="查看解析"></a>查看解析</h4><pre><code class="bash">dig -t txt  _acme-challenge.liangdonglin.cn @8.8.8.8
 
 ; &lt;&lt;&gt;&gt; DiG 9.11.4-P2-RedHat-9.11.4-16.P2.el7_8.6 &lt;&lt;&gt;&gt; -t txt _acme-challenge.liangdonglin.cn @8.8.8.8
@@ -290,77 +253,264 @@ acme.sh --issue --dns dns_gd -d example.com -d www.example.com</code></pre>
 <h3 id="开启自动更新"><a href="#开启自动更新" class="headerlink" title="开启自动更新"></a>开启自动更新</h3><pre><code class="bash">acme.sh  --upgrade  --auto-upgrade</code></pre>
 <h3 id="关闭自动更新"><a href="#关闭自动更新" class="headerlink" title="关闭自动更新"></a>关闭自动更新</h3><pre><code class="bash">acme.sh  --upgrade  --auto-upgrade 0</code></pre>
 
-  </article>
-
-  
-    
-  <div class="nexmoe-post-copyright">
-    <strong>本文作者：</strong>冬天<br>
-    <strong>本文链接：</strong><a href="http://liangdonglin.cn/2020/12/11/acme/" title="http:&#x2F;&#x2F;liangdonglin.cn&#x2F;2020&#x2F;12&#x2F;11&#x2F;acme&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;liangdonglin.cn&#x2F;2020&#x2F;12&#x2F;11&#x2F;acme&#x2F;</a><br>
-    
-      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-    
-  </div>
-
-
-  
-  
-  <div class="nexmoe-post-meta nexmoe-rainbow">
-    
-    
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/acme/" rel="tag">acme</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/https/" rel="tag">https</a>
-    
-</div>
-
-  <div class="nexmoe-post-footer">
-    <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: 'a5f94e077b5a28559a65',
-        clientSecret: 'be74498eadbb9b02dc6142a19f16c06b8662826a',
-        id: window.location.pathname,
-        repo: 'blog',
-        owner: 'liangdongin',
-        admin: 'liangdongin'
-    })
-    gitalk.render('gitalk')
-</script>
-</section>
-  </div>
-</div>
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-text">相关资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85acme"><span class="toc-text">安装acme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="toc-text">可选参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-text">申请证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-HTTP-%E6%96%B9%E5%BC%8F"><span class="toc-text">1.HTTP 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DNS-%E6%96%B9%E5%BC%8F"><span class="toc-text">1.DNS 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6-1"><span class="toc-text">申请证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A7%A3%E6%9E%90"><span class="toc-text">查看解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E9%AA%8C%E8%AF%81%EF%BC%8C%E5%BE%97%E5%88%B0%E8%AF%81%E4%B9%A6"><span class="toc-text">完成验证，得到证书</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API%E6%B7%BB%E5%8A%A0DNS%E9%AA%8C%E8%AF%81"><span class="toc-text">API添加DNS验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%81%E4%B9%A6"><span class="toc-text">使用证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0acme"><span class="toc-text">更新acme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-text">手动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-text">开启自动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-text">关闭自动更新</span></a></li></ol></li></ol>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
-<script>
-	hljs.initHighlightingOnLoad();
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
-<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1610336588960"></script>
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://liangdonglin.cn/2020/12/11/acme/">http://liangdonglin.cn/2020/12/11/acme/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acme/" rel="tag">acme</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/https/" rel="tag">https</a></li></ul>
+
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/10/win7-net4.7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">Win7 安装.NET 阻塞问题解决办法</div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+  <div id="comments"></div>
+
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/12/11/acme/">使用acme申请免费的HTTPS证书</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/10/win7-net4.7/">Win7 安装.NET 阻塞问题解决办法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/Win7/" style="font-size: 10px;">Win7</a> <a href="/tags/acme/" style="font-size: 10px;">acme</a> <a href="/tags/https/" style="font-size: 10px;">https</a>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年12月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/" rel="tag">.NET</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Win7/" rel="tag">Win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/acme/" rel="tag">acme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/" rel="tag">https</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://blog.lindexi.com/">lindexi</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://walterlv.com/">吕毅</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/atom.xml">订阅本站</a>
+        <span> | </span><a href="/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 冬天.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
+<script src="/js/script.js"></script>
 
-    <!-- baidu Analytics -->
+
+
+
 <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?e2fda46cf39aa554c197fe6a71c85d6d';
-    var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e2fda46cf39aa554c197fe6a71c85d6d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
 
-</body>
 
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'a5f94e077b5a28559a65',
+      clientSecret: 'be74498eadbb9b02dc6142a19f16c06b8662826a',
+      repo: 'blog',
+      owner: 'liangdongin',
+      admin: ['liangdongin'],
+      id: md5(window.location.pathname),
+      distractionFreeMode: false,
+      language: 'zh-CN',
+      pagerDirection: 'last'
+    });
+    gitalk.render('comments');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
 </html>
