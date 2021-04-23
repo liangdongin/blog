@@ -42,5 +42,5 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /app/jiyun2-prd/www/admin
-          git pull
+          whoami
+          ls -al
