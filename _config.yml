@@ -4,8 +4,8 @@
 
 # Site
 title: 冬天
-subtitle: '冬天Blog'
-description: '冬天Blog'
+subtitle: '芸芸众生,沧海一粟。'
+description: '芸芸众生,沧海一粟。'
 keywords: '冬天Blog'
 author: 冬天
 language: zh-CN
@@ -98,9 +98,29 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: nexmoe
+theme: BlueLake
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true #文章标题
+    date: true #发表日期
+    path: true #路径
+    text: true #文本字段
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true #标签
+  

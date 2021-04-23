@@ -17,10 +17,15 @@ jobs:
       run: |
           # install hexo env
           node -v
+          git submodule update --init --recursive
+          \cp themes_config.yml themes/BlueLake/_config.yml
           npm install
           sudo npm install hexo-cli -g
-          npm install hexo-deployer-git --save
-          npm i --save hexo-wordcount
+          npm install hexo-generator-feed --save
+          npm install hexo-generator-sitemap --save
+          npm install hexo-generator-json-content --save
+          npm uninstall hexo-generator-index --save
+          npm install hexo-generator-index-pin-top --save
           hexo g
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -29,7 +34,7 @@ jobs:
         BRANCH: master
         FOLDER: public
         CLEAN: true # Automatically remove deleted files from the deploy branch
-    - name: executing remote ssh commands using ssh key
+    - name: Pull
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -37,5 +42,5 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          whoami
-          ls -al
+          cd /app/jiyun2-prd/www/admin
+          git pull
