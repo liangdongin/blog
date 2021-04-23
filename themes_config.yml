@@ -97,7 +97,7 @@ about:
   photo_url: /images/avatar.jpg
   items:
   - label: email
-    url: net_1010@qq.com
+    url: mailto:net_1010@qq.com
     title: net_1010@qq.com
   - label: github
     url: https://github.com/liangdongin
