@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liangdonglin.cn/py.html</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liangdonglin.cn/live2dw/package.json</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liangdonglin.cn/live2dw/assets/tororo.model.json</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liangdonglin.cn/live2dw/assets/tororo.pose.json</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liangdonglin.cn/2020/12/11/acme/</loc>
     
     <lastmod>2021-08-25</lastmod>
@@ -24,13 +52,6 @@
   
   <url>
     <loc>http://liangdonglin.cn/archives.html</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liangdonglin.cn/py.html</loc>
     
     <lastmod>2021-08-25</lastmod>
     
