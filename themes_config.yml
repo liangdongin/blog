@@ -9,7 +9,7 @@ version: 3.0.0
 dark: true # true/false
 favicon: /favicon.png
 banner: "images/banner.jpg"
-banner-dark: "images/banner-dark.jpg"
+banner-dark: "images/banner.jpg"
 
 # Header
 menu:
