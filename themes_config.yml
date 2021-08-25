@@ -8,8 +8,8 @@ version: 3.0.0
 # Theme tone
 dark: true # true/false
 favicon: /favicon.png
-banner: "images/banner.jpg"
-banner-dark: "images/banner.jpg"
+banner: "/images/banner.jpg"
+banner-dark: "/images/banner.jpg"
 
 # Header
 menu:
