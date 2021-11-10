@@ -11,5 +11,5 @@ permalink: py.html
 ## 添加友链
 
 名称：冬天
-链接：https://www.liangdonglin.cn.com/
-LOGO：https://www.liangdonglin.cn/images/avatar.jpg
+链接：https://www.ldlv.cn/
+LOGO：https://www.ldlv.cn/images/avatar.jpg

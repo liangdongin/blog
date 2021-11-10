@@ -8,8 +8,8 @@ version: 3.0.0
 # Theme tone
 dark: true # true/false
 favicon: /favicon.png
-banner: "https://www.liangdonglin.cn/images/banner.jpg"
-banner-dark: "https://www.liangdonglin.cn/images/banner.jpg"
+banner: "https://www.ldlv.cn/images/banner.jpg"
+banner-dark: "https://www.ldlv.cn/images/banner.jpg"
 
 # Header
 menu:
