@@ -1,3 +1,4 @@
 [submodule "themes/BlueLake"]
 	path = themes/BlueLake
 	url = https://github.com/liangdongin/hexo-theme-BlueLake.git
+	branch = master
