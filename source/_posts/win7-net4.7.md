@@ -21,14 +21,16 @@ coverHeight: 427
 
 2.在Windows版本中，我们可以看到我们的系统是哪一版本的。
 
-3.下载对应版本的两个补丁更新包
-&ensp;Windows 7 SP1 x86 补丁更新包 [下载地址](http://go.microsoft.com/fwlink/?LinkId=848159)
+3.打开系统更新
+&ensp;[教程](https://jingyan.baidu.com/article/47a29f2471e350c01423998e.html)
+
+4.安装对应版本的两个补丁更新包（安装后需要重启电脑）
+x64
 &ensp;Windows 7 SP1 x64 补丁更新包 [下载地址](http://go.microsoft.com/fwlink/?LinkId=848158)
-&ensp;Windows 7 SP1 x86 补丁更新包 2 [下载地址](http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/09/windows6.1-kb4474419-v3-x86_0f687d50402790f340087c576886501b3223bec6.msu)
 &ensp;Windows 7 SP1 x64 补丁更新包 2 [下载地址](http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/09/windows6.1-kb4474419-v3-x64_b5614c6cea5cb4e198717789633dca16308ef79c.msu)
+x86
+&ensp;Windows 7 SP1 x86 补丁更新包 [下载地址](http://go.microsoft.com/fwlink/?LinkId=848159)
+&ensp;Windows 7 SP1 x86 补丁更新包 2 [下载地址](http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/09/windows6.1-kb4474419-v3-x86_0f687d50402790f340087c576886501b3223bec6.msu)
 
-4.重启计算机
-
-5.安装 .NET4.8
-&ensp;中文简体在线下载包 [下载地址](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-chs)
+5.下载安装 .NET4.8 框架
 &ensp;离线安装包 [下载地址](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-offline-installer)
