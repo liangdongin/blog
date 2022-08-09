@@ -4,63 +4,88 @@
   <url>
     <loc>http://www.ldlv.cn/py.html</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/live2dw/package.json</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/live2dw/assets/tororo.model.json</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/live2dw/assets/tororo.pose.json</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.ldlv.cn/2020/12/11/acme/</loc>
+    <loc>http://www.ldlv.cn/2020/12/10/open_windows_update/</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/2020/12/10/win7-net4.7/</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/about.html</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/archives.html</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ldlv.cn/2020/12/11/acme/</loc>
+    
+    <lastmod>2022-08-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
 
   <url>
     <loc>http://www.ldlv.cn/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2022-08-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,30 +93,37 @@
   
   <url>
     <loc>http://www.ldlv.cn/tags/acme/</loc>
-    <lastmod>2021-11-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2022-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/tags/https/</loc>
-    <lastmod>2021-11-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2022-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.ldlv.cn/tags/Win7/</loc>
-    <lastmod>2021-11-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <loc>http://www.ldlv.cn/tags/Windows/</loc>
+    <lastmod>2022-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.ldlv.cn/tags/NET/</loc>
-    <lastmod>2021-11-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2022-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ldlv.cn/tags/Win7/</loc>
+    <lastmod>2022-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 
